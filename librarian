@@ -1,0 +1,49 @@
+#!/usr/bin/env php
+<?php
+
+if (php_sapi_name() !== 'cli') {
+    exit;
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Librarian\Builder\StaticBuilder;
+use Librarian\Provider\LibrarianServiceProvider;
+use Librarian\Provider\TwigServiceProvider;
+use Minicli\App;
+use Librarian\Provider\ContentServiceProvider;
+
+$app = new App(load_config());
+$app->setSignature('
+ _      ____  ____   ____    ____  ____   ____   ____  ____  
+| |    |    ||    \ |    \  /    ||    \ |    | /    ||    \ 
+| |     |  | |  o  )|  D  )|  o  ||  D  ) |  | |  o  ||  _  |
+| |___  |  | |     ||    / |     ||    /  |  | |     ||  |  |
+|     | |  | |  O  ||    \ |  _  ||    \  |  | |  _  ||  |  |
+|     | |  | |     ||  .  \|  |  ||  .  \ |  | |  |  ||  |  |
+|_____||____||_____||__|\_||__|__||__|\_||____||__|__||__|__|
+
+Type "./librarian help" for help with available commands.
+');
+
+$app->addService('content', new ContentServiceProvider());
+$app->addService('twig', new TwigServiceProvider());
+$app->addService('librarian', new LibrarianServiceProvider());
+$app->addService('builder', new StaticBuilder());
+
+$app->librarian->boot();
+
+try {
+    $app->runCommand($argv);
+} catch (CommandNotFoundException $notFoundException) {
+    $app->getPrinter()->error("Command Not Found.");
+    return 1;
+} catch (Exception $exception) {
+    if ($app->config->debug) {
+        $app->getPrinter()->error("An error occurred:");
+        $app->getPrinter()->error($exception->getMessage());
+    }
+    return 1;
+}
+
+return 0;
