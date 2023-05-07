@@ -7,6 +7,6 @@
         </div>
     {% endfor %}
     <div class="clear-both"></div>
-    {% include '_partials/pagination.html.twig' with { 'url': site_root() } %}
+    {% include '_partials/pagination.html.twig' with { 'url': config('site_url') } %}
 {% endblock%}
 

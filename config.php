@@ -7,7 +7,7 @@ return [
      *****************************************************************************************/
 
     # Site Information
-    'site_name' => envconfig('SITE_NAME', 'Sponsor Open Source Developers'),
+    'site_name' => 'Sponsor Open Source Developers',
     'site_author' => envconfig('SITE_AUTHOR', '@erikaheidi'),
     'site_description' => envconfig('SITE_DESC', 'A public list of underrepresented open source developers that can be sponsored via GitHub'),
     'site_url' => envconfig('SITE_URL', 'http://localhost:8000'),
