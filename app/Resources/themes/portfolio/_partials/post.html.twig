@@ -24,7 +24,7 @@
         <div class="pb-6">
             <p class="text-md my-4 mb-6"><i class="fas fas-lg fa-tags"></i>
                 {% for tag in content.getAsArray('tags') %}
-                    <span class="rounded-full bg-gray-200 px-3 py-2 hover:bg-gray-400"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
+                    <span class="rounded-full bg-gray-200 px-3 py-2 my-1 inline-grid hover:bg-gray-400"><a href="{{ site_root() }}tag/{{ tag }}">{{ tag }}</a></span>
                 {% endfor %}
             </p>
         </div>
