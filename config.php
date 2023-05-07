@@ -21,7 +21,7 @@ return [
     # Optional: Social links that show up on the top right
     'social_links' => [
         'Twitter' => envconfig('LINK_TWITTER'),
-        'Github'  => envconfig('LINK_GITHUB', 'https://github.com/minicli/librarian'),
+        'Github'  => envconfig('LINK_GITHUB', 'https://github.com/erikaheidi/sponsoropensource'),
         'YouTube' => envconfig('LINK_YOUTUBE'),
         'LinkedIn' => envconfig('LINK_LINKEDIN'),
         'Twitch' => envconfig('LINK_TWITCH'),
