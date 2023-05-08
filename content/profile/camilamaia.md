@@ -4,7 +4,7 @@ description: I am a Brazilian developer that loves developing using Python and R
 published: true
 user: camilamaia
 cover_image: https://avatars.githubusercontent.com/u/2728804?u=c962b1b828658f10f8dc1825b1283dabb2470f13&v=4
-tags: Python, Shell, HTML, SCSS, TypeScript
+tags: Python, Ruby, Golang, ScanAPI, DevTools, Automation
 ---
 
 ## Who am I?
